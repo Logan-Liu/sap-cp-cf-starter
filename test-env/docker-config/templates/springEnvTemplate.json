@@ -1,0 +1,59 @@
+{
+	"PORT": 80,
+	"SPRING_PROFILES_ACTIVE": "cloud",
+	"VCAP_APPLICATION": {
+
+	},
+	"VCAP_SERVICES": {
+		"postgresql": [
+			{
+				"binding_name": null,
+				"credentials": {
+					"dbname": "postgres",
+					"end_points": [
+					 {
+					  "host": "my-postgres",
+					  "network_id": "SF",
+					  "port": "5432"
+					 }
+					],
+					"hostname": "localhost",
+					"password": "postgres",
+					"port": "5432",
+					"ports": {
+					 "5432/tcp": "5432"
+					},
+					"uri": "postgres://postgres:postgres@my-postgres:5432/postgres",
+					"username": "postgres"
+				   },
+				"instance_name": "my-postgres",
+				"label": "postgresql",
+				"name": "my-postgres",
+				"plan": "v9.6-xxsmall",
+				"provider": null,
+				"syslog_drain_url": null,
+				"tags": [
+					"postgresql",
+					"relational"
+				],
+				"volume_mounts": []
+			}
+		],
+		"xsuaa": [
+			{
+				"binding_name": null,
+				"credentials": { },
+				"instance_name": "my-uaa",
+				"label": "xsuaa",
+				"name": "my-uaa",
+				"plan": "application",
+				"provider": null,
+				"syslog_drain_url": null,
+				"tags": [
+					"xsuaa"
+				],
+				"volume_mounts": []
+			}
+		]
+	}
+}

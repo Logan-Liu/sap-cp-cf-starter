@@ -1,0 +1,1 @@
+node docker-config/generateConfig.js > docker-compose.yml

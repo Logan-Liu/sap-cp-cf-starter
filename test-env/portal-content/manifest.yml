@@ -1,0 +1,9 @@
+---
+applications:
+- name: portal-content-deployer
+  memory: 128M
+  instances: 1
+  health-check-type: none
+  path: ../../src/portal
+  services:
+   - my-portal-content

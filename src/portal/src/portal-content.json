@@ -1,0 +1,285 @@
+{
+  "_version": "1.0.0",
+  "site": {
+    "_version": "1.0",
+    "identification": {
+      "id": "portal-content",
+      "namespace": "",
+      "entityType": "site",
+      "layer": "vendor",
+      "description": "",
+      "i18n": "",
+      "title": "my demo"
+    },
+    "payload": {
+      "groupsOrder": [
+        "my.group"
+      ],
+      "config": {
+        "ushellConfig": {
+          "renderers": {
+            "fiori2": {
+              "componentData": {
+                "config": {
+                  "enableTilesOpacity": true,
+                  "enablePersonalization": true,
+                  "enableSearch": true,
+                  "enableSetTheme": true,
+                  "enableSetLanguage": true,
+                  "enableBackGroundShapes": true,
+                  "disableSignOut": true,
+                  "enableNotificationsUI": true,
+                  "moveUserSettingsActionToShellHeader": true,
+                  "moveAppFinderActionToShellHeader": true,
+                  "moveEditHomePageActionToShellHeader": true,
+                  "applications": {
+                    "Shell-home": {
+                      "enableEasyAccess": false,
+                      "enableEasyAccessSAPMenu": false,
+                      "enableEasyAccessUserMenu": false
+                    }
+                  }
+                }
+              }
+            }
+          },
+          "services": {
+            "AllMyApps": {
+              "config": {
+                "enabled": true,
+                "showHomePageApps": true,
+                "showCatalogApps": true
+              }
+            }
+          }
+        }
+      },
+      "homeApp": {
+        "semanticObject": "Shell",
+        "action": "home"
+      },
+      "sap.cloud.portal": {
+        "_version": "1.2.0",
+        "config": {
+          "runtimeEnv": "cf",
+          "isOnline": "true",
+          "fioriVersion": "FIORI2",
+          "skipVariantResolving": true,
+          "siteHashVersion": "265099237",
+          "localAccess": false,
+          "filterIntranetApps": false,
+          "allowIntranetApps": false,
+          "ui5Version": "innovation",
+          "ui5VersionNumber": "1.50",
+          "showSessionTimeoutDialog": true,
+          "logoutData": {
+            "type": "DEFAULT",
+            "target": ""
+          },
+          "theme.active": "[\"sap_belize\"]",
+          "externalProviders": {
+            "oneflp_provider_sfsf": {
+              "companyId": null,
+              "URL": null
+            }
+          }
+        }
+      }
+    }
+  },
+  "catalogs": {
+    "mycatalog": {
+      "_version": "1.1",
+      "identification": {
+        "id": "mycatalog",
+        "i18n": "i18n/mycatalog.properties",
+        "description": "",
+        "entityType": "catalog",
+        "title": "mycatalog"
+      },
+      "payload": {
+        "appDescriptors": [          
+          {
+            "id": "myapp1"
+          }
+        ]
+      }
+    }
+  },
+  "applications": {
+    "myapp1": {
+      "_version": "1.3.0",
+      "sap.app": {
+        "_version": "1.3.0",
+        "id": "myapp1",
+        "i18n": "i18n/myapp1.properties",
+        "title": "No resource selected",
+        "tags": {
+          "keywords": [
+            ""
+          ]
+        },
+        "crossNavigation": {
+          "context": {},
+          "inbounds": {
+            "Start": {
+              "semanticObject": "my-sem-obj",
+              "action": "Start",
+              "deviceTypes": {
+                "desktop": true,
+                "tablet": true,
+                "phone": true
+              },
+              "signature": {
+                "parameters": {},
+                "additionalParameters": "allowed"
+              },
+              "title": "My App1",
+              "subTitle": "Start",
+              "info": "Dummy Info"
+            }
+          }
+        },
+        "description": ""
+      },
+      "sap.platform.hcp": {
+        "_version": "1.1.0",
+        "uri": "/spring-app1/myapp1",
+        "appName": ""
+      },
+      "sap.flp": {
+        "_version": "1.1.0",
+        "type": "UI5",
+        "config": {
+          "skipVariantResolving": ""
+        }
+      },
+      "sap.ui": {
+        "_version": "1.3.0",
+        "technology": "UI5",
+        "deviceTypes": {
+          "desktop": true,
+          "tablet": true,
+          "phone": true
+        }
+      },
+      "sap.ui5": {
+        "componentName": "myApp1"
+      },
+      "sap.fiori": {
+        "registrationIds": []
+      },
+      "sap.platform.cf": {
+        "oAuthScopes": [
+          "$XSAPPNAME.all"
+        ]
+      },
+      "sap.platform.runtime": {
+        "componentProperties": {},
+        "hasValidManifest": false
+      }
+    }
+  },
+  "groups": {
+    "groupsOrder": [
+      "my.group"
+    ],
+    "my.group": {
+      "_version": "1.0",
+      "identification": {
+        "id": "my.group",
+        "i18n": "i18n/configuration.properties",
+        "description": "",
+        "entityType": "group",
+        "title": "My Group"
+      },
+      "payload": {
+        "locked": false,
+        "tags": [],
+        "links": [],
+        "tiles": [
+          {
+            "entityType": "tile",
+            "id": "my.group.myapp1",
+            "appId": "myapp1",
+            "target": {
+              "semanticObject": "my-sem-obj",
+              "action": "Start"
+            }
+          }
+        ]
+      }
+    }
+  },
+  "systemAliases": {},
+  "roles": {
+    "Everyone": {
+      "_version": "1.0",
+      "identification": {
+        "id": "Everyone",
+        "i18n": "",
+        "namespace": "",
+        "title": "Everyone",
+        "description": "",
+        "entityType": "role",
+        "layer": ""
+      },
+      "payload": {
+        "catalogs": [],
+        "groups": [
+          {
+            "id": "my.group",
+            "namespace": ""
+          }
+        ]
+      }
+    },
+    "all": {
+      "_version": "1.0",
+      "identification": {
+        "id": "all",
+        "i18n": "i18n/dfba7e97-b246-488a-85cf-6a3e94c58415-1517230392145.properties",
+        "namespace": "",
+        "title": "all",
+        "description": "",
+        "entityType": "role",
+        "layer": ""
+      },
+      "payload": {
+        "catalogs": [],
+        "groups": [
+          {
+            "id": "my.group",
+            "namespace": ""
+          }
+        ]
+      }
+    }
+  },
+  "menus": {},
+  "systems": {},
+  "id": "98cb0c30-5282-11e8-a34b-45537da79cd0",
+  "siteThemes": {
+    "sap_belize": {
+      "path": "sap_belize",
+      "automaticUpgrade": "false",
+      "name": "sap_belize",
+      "description": "SAP Belize"
+    }
+  },
+  "metadata": {
+    "createdOn": 1525758152096,
+    "updatedOn": 1531818676372,
+    "createdBy": "S0009640365",
+    "updatedBy": "S0009640365",
+    "publishedOn": 1531818735830,
+    "isModified": false
+  },
+  "personalizedSite": {},
+  "loggedInUser": {
+    "userName": "me@mail.com"
+  },
+  "settings": {
+    "sessionTimeout": 15
+  }
+}

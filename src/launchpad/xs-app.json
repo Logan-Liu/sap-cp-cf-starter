@@ -1,0 +1,13 @@
+{
+  "welcomeFile": "index.html",
+  "authenticationMethod": "route",
+  "pluginMetadataEndpoint": "/metadata",
+  "routes": [
+    {
+      "source": "/app1",
+      "target": "/",
+      "destination": "app1",
+      "csrfProtection": false
+    }
+  ]
+}

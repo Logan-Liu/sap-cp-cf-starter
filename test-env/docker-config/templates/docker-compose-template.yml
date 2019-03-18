@@ -1,0 +1,33 @@
+version: '3'
+services:
+  launchpad:
+    build: ../../src/launchpad
+    container_name: launchpad
+    ports:
+     - "8080:8080"
+    networks: 
+     - NET1
+    environment:
+    {{#approuterEnv}}      
+     - {{{key}}}={{{value}}}
+    {{/approuterEnv}} 
+  app1:
+    build: ../../src/app
+    container_name: spring-app1
+    networks: 
+     - NET1
+    environment:     
+    {{#springEnv}}      
+     - {{{key}}}={{{value}}}
+    {{/springEnv}} 
+  postgres:
+    image: "postgres"
+    container_name: my-postgres
+    networks: 
+     - NET1        
+    environment:
+     - POSTGRES_USER=postgres
+     - POSTGRES_PASSWORD=postgres
+networks: 
+  NET1:
+    driver: "bridge"

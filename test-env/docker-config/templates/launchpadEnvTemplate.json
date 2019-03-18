@@ -1,0 +1,46 @@
+{
+	"PORT": 8080,
+	"VCAP_SERVICES": {
+		"portal-services": [
+			{
+				"binding_name": null,
+				"credentials": {},
+				"instance_name": "my-portal-host",
+				"label": "portal-services",
+				"name": "my-portal-host",
+				"plan": "site-host",
+				"provider": null,
+				"syslog_drain_url": null,
+				"tags": [
+					"portal",
+					"portal-services"
+				],
+				"volume_mounts": []
+			}
+		],
+		"xsuaa": [
+			{
+				"binding_name": null,
+				"credentials": {},
+				"instance_name": "my-uaa",
+				"label": "xsuaa",
+				"name": "my-uaa",
+				"plan": "application",
+				"provider": null,
+				"syslog_drain_url": null,
+				"tags": [
+					"xsuaa"
+				],
+				"volume_mounts": []
+			}
+		]
+	},	
+	"sapui5url": "https://sapui5.hana.ondemand.com/1.56.10",
+	"destinations": [
+		{
+			"name": "app1",
+			"url": "http://spring-app1",
+			"forwardAuthToken": true
+		}
+	]
+}

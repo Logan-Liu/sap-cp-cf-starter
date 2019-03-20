@@ -15,7 +15,7 @@ Key features
 * fully scripted setup, no copy&paste of environments, no manual tweaks & configuration
 
 ## Usage
-Some more background information can be found in this blog post: []()
+Some more background information can be found in this blog post: [https://blogs.sap.com/2019/03/20/how-to-test-cloudfoundry-apps..outside-of-cloudfoundry/](https://blogs.sap.com/2019/03/20/how-to-test-cloudfoundry-apps..outside-of-cloudfoundry/)
 ### Demo Application
 The starter project is based on a demo application following the architecture highlighted in the figure below:
  ![](./docs/before.png)
@@ -38,10 +38,12 @@ To test you application, login to your Cloud Foundry account (`cf login`) and ru
 > ./4_start_apps.cmd                # starts all apps & services
 ```
 
-If the setup does not work as expected, open an issue in this repository.
+## Prerequisites && Issues
 
-## Prerequisites
-
+Some prerequisites for getting the test environment to run
+* CloudFoundry CLI & an account on the SAP Cloud Platform, Cloud Foundry edition
 * Docker & Docker-Compose
 * Node.JS
-* mvn
+* maven/Java
+
+Setup has been tested on Docker for Windows. If it does not work as expected, open an issue in this repository.

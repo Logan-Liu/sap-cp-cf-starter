@@ -1,0 +1,12 @@
+---
+applications:
+- name: launchpad
+  memory: 256M
+  host: launchpad
+  buildpack: nodejs_buildpack
+  env:
+    sapui5url: 'https://sapui5.hana.ondemand.com/1.56.10'
+    destinations: '[{"name":"app1","url":"http://spring-app1.cfapps.eu10.hana.ondemand.com","forwardAuthToken":true}]'
+  services:
+  - my-uaa
+  - my-portal-host

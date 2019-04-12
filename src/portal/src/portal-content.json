@@ -169,11 +169,6 @@
       "sap.fiori": {
         "registrationIds": []
       },
-      "sap.platform.cf": {
-        "oAuthScopes": [
-          "$XSAPPNAME.all"
-        ]
-      },
       "sap.platform.runtime": {
         "componentProperties": {},
         "hasValidManifest": false
